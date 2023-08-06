@@ -1,0 +1,38 @@
+<%= render 'books/list', user: @user %>
+
+
+<div class="col-md-8">
+
+      <h1>Books</h1>
+
+      <table>
+
+        <thead>
+
+          <th >image</th>
+
+          <th >name</th>
+
+          <th  clospan="3"></th>
+
+        </thead>
+
+        <% @users.each do |user| %>
+
+        <tbody>
+
+          <tr>
+
+            <td><= link_to user.name, book_path %></td>
+
+            <td><= link_to "show", user_path %></td>
+
+          </tr>
+
+        </tbody>
+
+        <% end %>
+
+      </table>
+
+    </div>

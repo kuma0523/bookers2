@@ -1,0 +1,37 @@
+<%= render 'books/list', user: @user,book: @book  %>
+
+<div class="col-md-8">
+
+      <h1>Books</h1>
+
+      <table>
+
+        <thead>
+
+          <th >Title</th>
+
+          <th >Opinion</th>
+
+          <th  clospan="3"></th>
+
+        </thead>
+
+         <% @books.each do |book| %>
+
+        <tbody>
+
+          <tr>
+
+            <td><%= link_to book.title, book_path %></td>
+
+            <td><%= book.body%></td>
+
+          </tr>
+
+        </tbody>
+
+        <% end %>
+
+      </table>
+
+    </div>
