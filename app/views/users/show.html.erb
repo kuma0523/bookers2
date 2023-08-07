@@ -1,37 +1,50 @@
-<%= render 'books/list', user: @user,book: @book  %>
+<div class="container px-5 sm-0">
 
-<div class="col-md-8">
+  <div class="row">
 
-      <h1>Books</h1>
+    <div class="col-md-3">
 
-      <table>
 
-        <thead>
+      <%= render 'books/list', user: @user, book: @book %>
 
-          <th >Title</th>
+      </div>
 
-          <th >Opinion</th>
+      <div class="col-md-8">
 
-          <th  clospan="3"></th>
+         <h1>Books</h1>
 
-        </thead>
+        <table>
 
-         <% @books.each do |book| %>
+          <thead>
 
-        <tbody>
+            <th >Title</th>
 
-          <tr>
+            <th >Opinion</th>
 
-            <td><%= link_to book.title, book_path %></td>
+            <th  clospan="3"></th>
 
-            <td><%= book.body%></td>
+          </thead>
 
-          </tr>
+           <% @books.each do |book| %>
 
-        </tbody>
+           <tbody>
 
-        <% end %>
+            <tr>
 
-      </table>
+              <td><%= link_to book.title, book_path %></td>
+
+              <td><%= book.body%></td>
+
+            </tr>
+
+          </tbody>
+
+          <% end %>
+
+        </table>
+
+      </div>
 
     </div>
+
+  </div>
