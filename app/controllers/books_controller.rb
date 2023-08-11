@@ -13,10 +13,17 @@ class BooksController < ApplicationController
 
     @book.user_id = current_user.id
 
-    @book.save
+    if @book.save
 
-    redirect_to user_path(current_user.id)
-    # 変更
+      flash[:notice] = "You have created book successfully."
+
+      redirect_to user_path(current_user.id)
+
+    else
+
+      render :new
+
+    end
 
   end
 
@@ -58,9 +65,17 @@ class BooksController < ApplicationController
 
     @book = Book.find(params[:id])
 
-    @book.update(book_params)
+    if @book.update(book_params)
 
-    redirect_to @book
+      flash[:notice] = "You have updated book successfully."
+
+      redirect_to book_path(current_user.id)
+
+    else
+
+      render :edit
+
+    end
 
   end
 
@@ -73,7 +88,7 @@ class BooksController < ApplicationController
     book.destroy
 
     redirect_to books_path
-    
+
   end
 
 
@@ -87,4 +102,3 @@ class BooksController < ApplicationController
   end
 
 end
-

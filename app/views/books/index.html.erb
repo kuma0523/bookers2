@@ -1,3 +1,11 @@
+<div>
+  
+  <%= flash[:notice] %>
+  
+</div>
+
+
+
 <div class="container px-5 sm-0">
 
   <div class="row">
@@ -31,7 +39,7 @@
 
             <tr>
 
-              <td><%= image_tag @user.get_profile_image(100,100) %></td>
+              <td><%= image_tag book.user.get_profile_image(100,100) %></td>
 
               <td><%= link_to book.title, book_path(book.id) %></td>
 
