@@ -8,7 +8,7 @@
 
 
 
-        <%= image_tag @user.get_profile_image(100,100) %>
+        <%= image_tag user.get_profile_image(100,100) %>
 
         <table>
 
@@ -46,7 +46,7 @@
 
         <h1>New book</h1>
 
-          <%= form_with model: book do |f| %>
+          <%= form_with model: Book.new do |f| %>
 
             <h4>Title</h4>
 
@@ -56,7 +56,9 @@
 
             <%= f.text_area :body %>
 
-            <%= f.submit 'Create Book' %>
+
+           <%= f.submit 'Create Book'  %>
+
 
           <% end %>
 
