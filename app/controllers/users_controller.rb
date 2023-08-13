@@ -36,7 +36,7 @@ class UsersController < ApplicationController
 
     else
 
-      redirect_to user_path
+      redirect_to user_path(current_user)
 
     end
 
